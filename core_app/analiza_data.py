@@ -6,7 +6,7 @@ import tabula
 import pdfplumber
 import seaborn as sns
 import matplotlib.pyplot as plt
-from snowflake.snowpark import Session
+
 
 class analiza_data:
 
@@ -19,16 +19,6 @@ class analiza_data:
         self.datafilename_pdf = configs.get('data.filename_pdf').data
         self.arch= ruta + filename
         self.arch_pdf = ruta + self.datafilename_pdf
-        ## parametros de conexión a snowflake
-        self.connection_parameters = {
-            "account": configs.get('snowflake.account').data,
-            "user": configs.get('snowflake.user').data,
-            "password": configs.get('snowflake.password').data,
-            "role": configs.get('snowflake.role').data,
-            "warehouse": configs.get('snowflake.warehouse').data,
-            "database": configs.get('snowflake.database').data,
-            "schema": configs.get('snowflake.schema').data
-        } 
         
 
     def analiza(self):
